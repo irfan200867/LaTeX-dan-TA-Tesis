@@ -1,0 +1,50 @@
+
+% SVG names
+%AliceBlue,AntiqueWhite,Aqua,Aquamarine,Azure,
+%Beige,Bisque,Black,BlanchedAlmond,Blue,BlueViolet,Brown,BurlyWood,
+%CadetBlue,Chartreuse,Chocolate,Coral,CornflowerBlue,Cornsilk,Crimson,Cyan,
+%DarkBlue,DarkCyan,DarkGoldenrod,DarkGray,DarkGreen,DarkGrey,DarkKhaki,
+%DarkMagenta,DarkOliveGreen,DarkOrange,DarkOrchid,DarkRed,DarkSalmon,
+%DarkSeaGreen,DarkSlateBlue,DarkSlateGray,DarkSlateGrey,DarkTurquoise,
+%DarkViolet,DeepPink,DeepSkyBlue,DimGray,DimGrey,DodgerBlue,
+%FireBrick,FloralWhite,ForestGreen,Fuchsia,
+%Gainsboro,GhostWhite,Gold,Goldenrod,Gray,Green,GreenYellow,Grey,
+%Honeydew,HotPink,
+%IndianRed,Indigo,Ivory,
+%Khaki,
+%Lavender,LavenderBlush,LawnGreen,LemonChiffon,LightBlue,LightCoral,LightCyan,
+%LightGoldenrod,LightGoldenrodYellow,LightGray,LightGreen,LightGrey,LightPink,
+%LightSalmon,LightSeaGreen,LightSkyBlue,LightSlateBlue,LightSlateGray,LightSlateGrey,
+%LightSteelBlue,LightYellow,Lime,LimeGreen,Linen,
+%Magenta,Maroon,MediumAquamarine,MediumBlue,MediumOrchid,MediumPurple,MediumSeaGreen,
+%MediumSlateBlue,MediumSpringGreen,MediumTurquoise,MediumVioletRed,MidnightBlue,
+%MintCream,MistyRose,Moccasin,
+%NavajoWhite,Navy,NavyBlue,
+%OldLace,Olive,OliveDrab,Orange,OrangeRed,Orchid,
+%PaleGoldenrod,PaleGreen,PaleTurquoise,PaleVioletRed,PapayaWhip,PeachPuff,Peru,Pink,
+%Plum,PowderBlue,Purple,
+%Red,RosyBrown,RoyalBlue,
+%SaddleBrown,Salmon,SandyBrown,SeaGreen,Seashell,Sienna,Silver,SkyBlue,SlateBlue,
+%SlateGray,SlateGrey,Snow,SpringGreen,SteelBlue,
+%Tan,Teal,Thistle,Tomato,Turquoise,
+%Violet,VioletRed,
+%Wheat,White,WhiteSmoke,
+%Yellow,YellowGreen
+
+% BEAMER THEMES:
+%default,AnnArbor,Antibes,Bergen,Berkeley,Berlin,Boadilla,CambridgeUS,Copenhagen,Darmstadt,
+%Dresden,EastLansing,Frankfurt,Goettingen,Hannover,Ilmenau,JuanLesPins,Luebeck,Madrid,
+%Malmoe,Marburg,Montpellier,PaloAlto,Pittsburgh,Rochester,Singapore,Szeged,Warsaw
+
+% BEAMER OUTER THEMES:
+%default,infolines,miniframes,shadow,sidebar,smoothbars,smoothtree,split,tree
+
+% BEAMER INNER THEMES:
+%default,circles,inmargin,rectangles,rounded
+
+% BEAMER FONT THEMES:
+%default,professionalfonts,serif,structurebold,structureitalicserif,structuresmallcapsserif
+
+% BEAMER COLOR THEMES:
+%default,albatross,beaver,beetle,crane,dolphin,dove,fly,lily,monarca,orchid,
+%rose,seagull,seahorse,sidebartab,spruce,structure,whale,wolverine

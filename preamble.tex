@@ -1,0 +1,181 @@
+% EDIT THIS FILE (MIHpreamble.tex)
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\itshape\color{DarkGreen},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{Gray},
+    stringstyle=\color{DodgerBlue},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=C
+}
+\lstdefinestyle{PyStyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\itshape\color{DarkGreen},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{Gray},
+    stringstyle=\color{DodgerBlue},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=Python
+}
+\lstdefinestyle{FortranStyle}{
+    backgroundcolor=\color{white},
+    commentstyle=\itshape\color{DarkGreen},
+    keywordstyle=\bfseries\color{red},
+    numberstyle=\tiny\color{Gray},
+    stringstyle=\color{DodgerBlue},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=Fortran
+}
+\usetikzlibrary{shadows,calc}
+\bibpunct{(}{)}{;}{a}{}{,}              % bibliography style format:
+%         author [year]
+% If you want to use Bahasa Indonesia
+\usepackage[bahasa]{babel}
+\uselanguage{Bahasa}
+\languagepath{Bahasa}
+\deftranslation[to=Bahasa]{Theorem}{Teorema}
+\deftranslation[to=Bahasa]{Corollary}{Akibat}
+\deftranslation[to=Bahasa]{Definition}{Definisi}
+\deftranslation[to=Bahasa]{Example}{Contoh}
+\deftranslation[to=Bahasa]{Proof}{Bukti}
+
+% ITB COLORS:
+\definecolor{ITB}{RGB}{40, 56,144} % note the uppercase RGB
+\definecolor{G10}{RGB}{16,116,188} % note the uppercase RGB
+
+\usetheme{Warsaw}
+\useoutertheme{infolines,shadow}
+\useinnertheme{rounded}
+\usefonttheme{professionalfonts,structurebold}
+\usecolortheme[named=ITB]{structure}
+\setbeamertemplate{items}[ball]                  %default,ball,circle,rectangle
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{caption}[numbered]
+%\setbeamertemplate{frametitle}[default][left]   %unfortunately, shadow disappear
+\setbeamercolor{normal text}{fg=black}
+%\setbeamertemplate{background canvas}{\includegraphics
+%    [width=\paperwidth,height=\paperheight]{whiteLandscape.jpg}}
+\setbeamercovered{transparent}
+\usebackgroundtemplate{%
+    \begin{tikzpicture}[remember picture,overlay]\node[opacity=0.01,inner sep=0] at (current page.center) {\includegraphics[scale=0.15]{logoITB}};\end{tikzpicture} % best opacity = 0.025
+}
+\hypersetup{colorlinks=true,allcolors=FireBrick,bookmarksopenlevel=1}
+% \newtheorem{teorema}{Teorema} % theorem environment using Bahasa
+% SOME NEW THEOREM/BLOCK ENVIRONMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{instance}{Example}
+\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+% Example or instance %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{instance}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=Brown!50!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{instance}{
+    \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+\newtheorem{exercise}{Exercise}
+% Exercise %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{exercise}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=DarkKhaki!50!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{exercise}{
+    \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+\newtheorem{assignment}{Assignment/Homework}
+% Exercise %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{assignment}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=black}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{assignment}{
+    \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+\newtheorem{algoblock}{Algorithm}
+% Example or instance %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\BeforeBeginEnvironment{algoblock}{
+    \setbeamercolor{block title}{use=example text,fg=white,bg=G10}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\AfterEndEnvironment{algoblock}{
+    \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+    \setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Drop image shadow with gaussian blur (using Tikz, not fancybox) %%%%%%%%%%%%%%%%
+% some parameters for customization
+\def\shadowshift{3pt,-3pt}
+\def\shadowradius{6pt}
+\colorlet{innercolor}{black!60}
+\colorlet{outercolor}{gray!05}
+% this draws a shadow under a rectangle node
+\newcommand\drawshadow[1]{
+    \begin{pgfonlayer}{shadow}
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[top color=innercolor,bottom color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[left color=innercolor,right color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \shade[bottom color=innercolor,top color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[outercolor,right color=innercolor,left color=outercolor] ($(#1.south west)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \filldraw ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)-(\shadowradius/2,\shadowradius/2)$);
+    \end{pgfonlayer}
+}
+% create a shadow layer, so that we don't need to worry about overdrawing other things
+\pgfdeclarelayer{shadow}
+\pgfsetlayers{shadow,main}
+\newsavebox\mybox
+\newlength\mylen
+\newcommand\shadowimage[3][]{%
+    \setbox0=\hbox{\includegraphics[#1]{#2}}
+    \setlength\mylen{\wd0}
+    \ifnum\mylen<\ht0
+    \setlength\mylen{\ht0}
+    \fi
+    \divide \mylen by 120
+    \def\shadowshift{\mylen,-\mylen}
+    \def\shadowradius{\the\dimexpr\mylen+\mylen+\mylen\relax}
+    \begin{figure}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[#1]{#2}};
+            \drawshadow{image}
+        \end{tikzpicture}
+        \caption{#3}
+\end{figure}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
