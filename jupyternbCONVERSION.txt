@@ -1,0 +1,1 @@
+jupyter nbconvert --to latex --no-input <Notebook filename> --output <LaTeX filename>

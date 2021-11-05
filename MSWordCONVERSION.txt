@@ -1,0 +1,3 @@
+1. pandoc -s <nama file docx> -o <nama file LaTeX yang diinginkan>
+2. edit <nama file LaTeX yang diinginkan> mengikuti standar LaTeX dan standar TA/Tesis
+3. pdflatex <nama file LaTeX yang diinginkan>

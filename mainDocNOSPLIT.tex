@@ -1,0 +1,247 @@
+% FYI:
+% In TeX/LaTeX document, '%' is used in the beginning of comment line
+
+% BEGINNING of the document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PRAEMBLE/FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CLASS declaration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF CLASS declaration
+
+% (1) PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english,bahasa]{babel}
+%\usepackage{graphicx} % for figures
+\usepackage{hyperref}
+\usepackage{lipsum}    % for experimental purpose
+
+% (1a) package-related setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{colorlinks=true,allcolors=blue}
+
+% (1b) new/custom settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ... here below are some examples ...
+
+\newcommand{\bulan}{\ifcase\month\or
+    Januari\or Februari\or Maret\or April\or Mei\or Juni\or
+    Juli\or Agustus\or September\or Oktober\or November\or Desember\fi}
+\newcommand{\Rsun}{R_{\odot}}
+\newcommand{\Mearth}{M_{\oplus}}
+
+% (1c) hyphenation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{ }
+
+% (2) DOCUMENT IDENTITY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TYPE HERE IF YOU DON'T MIND of THE TITLE/COVER PAGE STYLE,
+% OR
+% TYPE IN A CUSTOM TITLE PAGE (See 'MAIN MATTER' section in this
+% document)
+
+%\title{Draft TA ($1\,\Rsun,\;1\,\Mearth$)}
+%\author{P E Nulis}
+%\date{\bulan~\number\year} % other example: \date{\today}, or
+%                \date{\number\year}
+
+% (3) LAYOUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF PRAEMBLE/FRONT MATTER
+
+% MAIN MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    % (1) MAKE TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %\maketitle % OR, CUSTOM TITLE PAGE BELOW as an example
+
+    \addcontentsline{toc}{chapter}{Halaman Sampul Dalam}
+    \rightline{\Huge\bfseries Draft TA ($1\,\Rsun,\;1\,\Mearth$)}
+
+    \vspace{6 true cm}
+
+    \rightline{\LARGE\itshape P E Nulis}
+
+    \vspace{0.5 true in}
+
+    \rightline{\Large NIM 10303003}
+
+    \vspace{8 true cm}
+
+    \centerline{\LARGE\bfseries~Program Studi Sarjana Astronomi}
+    \smallskip
+    \centerline{\LARGE\bfseries~Fakultas Matematika Dan Ilmu Pengetahuan Alam}
+    \smallskip
+    \centerline{\LARGE\bfseries~Institut Teknologi Bandung}
+    \smallskip
+    \centerline{\Large\bfseries\bulan~\number\year} % or without \bulan
+
+    \thispagestyle{empty} % without pagenumbering
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF MAKE TITLE
+
+    % (2) QUOTATION/CREDITS/DEDICATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{\ } % TRICKY! Only a blank space, wkwkwk
+    \addcontentsline{toc}{chapter}{Dedikasi}
+    \centerline{\Large\itshape Mama,\ldots~\LaTeX\ make me smile\ldots}
+
+    % (3) TABLE OF CONTENTS/LIST OF TABLES or FIGURES %%%%%%%%%%%%%%%%%%
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{\contentsname}
+    \listoftables
+    \addcontentsline{toc}{chapter}{\listtablename}
+    \listoffigures
+    \addcontentsline{toc}{chapter}{\listfigurename}
+
+    % (4a) ABSTRACT in BAHASA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %\begin{abstract} % valid for article / report class
+        \chapter*{\abstractname}
+        \addcontentsline{toc}{chapter}{\abstractname}
+        \lipsum[1] % of course, you must replace \lipsum with your true
+        % abstract sentences
+
+        \textit{Kata kunci:} lipsum--draft--TA
+        %\end{abstract}
+
+    \selectlanguage{english}
+    % (4b) ABSTRACT in ENGLISH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %\begin{abstract} % valid for article / report class
+        \chapter*{\abstractname}
+        \addcontentsline{toc}{chapter}{\abstractname}
+        \lipsum[1]
+
+        \textit{Keywords:} lipsum--draft--TA
+        %\end{abstract}
+
+    % Now, SWITCH TO BAHASA
+    \selectlanguage{bahasa}
+
+    % (4c) ABOUT THE DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{Petunjuk Penggunaan Dokumen TA/Tesis/Disertasi}
+    \addcontentsline{toc}{chapter}{Petunjuk Penggunaan Dokumen TA/Tesis/Disertasi}
+    \lipsum[1]
+
+    % (5) UNNUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{Pengantar} % Preface
+    \addcontentsline{toc}{chapter}{Pengantar}
+    \label{Preface}      % WRONG, it's no use to put the label on \chapter*!
+    \lipsum
+
+    % (6a) NUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter{Pendahuluan} % Intro
+    \label{Intro}        % CORRECT to put the label on \chapter
+    \pagenumbering{arabic}
+    \lipsum[1]
+
+    \begin{table}[h!]
+        \centering
+        \caption{Tabel sederhana}
+        \begin{tabular}{|c|c|}
+            \hline
+            No & Nama \\\hline\hline
+            1  & Aman \\\hline
+        \end{tabular}
+        \label{tab:nama}
+    \end{table}
+
+    \begin{table}[h!]
+        \centering
+        \caption{Daftar Tingkatan. Ini tabel serius.}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \verb|class| & \verb|\part| & \verb|\chapter| & \verb|\section| & \verb|\subsection| & \verb|\subsubsection|\\\hline\hline
+            \multicolumn{1}{|l|}{\ttfamily book}    &  Ada  & Ada & Ada & Ada & Ada\\\hline
+            \multicolumn{1}{|l|}{\ttfamily report}  &  Ada  & Ada & Ada & Ada & Ada\\\hline
+            \multicolumn{1}{|l|}{\ttfamily article} &  Ada  & --  & Ada & Ada & Ada\\\hline
+        \end{tabular}
+        \label{tab:stage}
+    \end{table}
+
+    Here is a little mathematics
+
+    \begin{equation}
+        x_{\mbox{1,2}} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \label{eqABC}
+    \end{equation}
+
+    As we know, Euclidean distance is
+
+    \[ d = \sqrt{(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2} \]
+
+    And cosinus formula in spherical trigonometry:
+
+    \begin{eqnarray}
+        \cos \alpha &=& \cos \beta\,\cos \gamma \nonumber\\
+        &+& \sin \beta\,\sin \gamma\,\cos A
+        \label{eqCos}
+    \end{eqnarray}
+
+    \lipsum[2] Lihat Tabel~\ref{tab:stage}. Lihat persamaan~(\ref{eqABC}) dan persamaan~(\ref{eqCos}). Lihat juga awal Bagian~\ref{Intro}. % atau juga di Bagian~\ref{Preface}.
+
+    % (6b) NUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter{Okultasi} % Okult
+    \label{Okult}
+    \lipsum[1-3] Lihat Bagian~\ref{Intro} dan Bagian~\ref{CnclSg}.
+
+    %\begin{figure}
+        %    \centering
+        %    EPS (or PS), PDF are recommended: very good quality
+        %    and can be compiled by latex or pdflatex as well
+        %    \includegraphics{figOne} % the filename
+        %    \caption{Contoh gambar.}
+        %    \label{fig:One}
+        %\end{figure}
+
+    % (6c) NUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter{Simpulan dan Saran} % CnclSg
+    \label{CnclSg}
+
+    % (7a) NUMBERED SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Simpulan}
+    \label{Cncl}
+
+    % Enumerated/ordered list
+    \begin{enumerate}
+        \item Here, there, and everywhere.
+        \item This and that.
+        \item They are us.
+        \item We are them.
+    \end{enumerate}
+
+    % (7b) UNNUMBERED SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section*{Saran}
+    \addcontentsline{toc}{section}{Saran}
+    \label{Sg}      % WRONG, it's no use to put the label on \section*!
+
+    % Unordered list
+    \begin{itemize}
+        \item It's not a suggestion.
+        \item Also, not a \ldots mmm \ldots (I'm still thinking)
+    \end{itemize}
+
+    % (8) AGAIN, UNNUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter*{\refname} % Refer
+    \addcontentsline{toc}{chapter}{\refname}
+    \label{Refer}      % WRONG, it's no use to put the label on \chapter*!
+
+    \begin{enumerate}
+        \item A U Thor, 2002, \textit{Buku Bukan Guru Jadul, tetapi  Guru Penyabar}, Blablabla, Bandung.
+        \item P E Nulis, 2112, \textit{Babylonian Tablet: What?}, Mesopotamian, Sumeria.
+    \end{enumerate}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF MAIN MATTER
+
+    % BACK MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \appendix
+
+    % BACK/MAIN MATTERS ARE PARTS, INDEED! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \part*{Lampiran-lampiran\addcontentsline{toc}{part}{Lampiran-lampiran}}
+    \pagenumbering{Roman}
+
+    % (9) NUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter{Code}
+    \lipsum[7]
+
+    % (10) NUMBERED CHAPTERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \chapter{Ode, Not Code}
+    \lipsum[5]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF BACK MATTER
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF THE DOCUMENT
