@@ -30,7 +30,7 @@
 \logo{\includegraphics[scale=0.02]{logoITB}} % logo as watermark is also provided
 \institute[FMIPA -- ITB]{Prodi Astronomi\\
     FMIPA -- ITB\\\bigskip
-    \textbf{AS4091(2) Tugas Akhir I(II)}}
+    \textbf{AS4091 Tugas Akhir I \& AS4092 Tugas Akhir II}}
 \date{\number\year}
 
 \setbeamercolor{ITBtitle}{fg=ITB,bg=White}
@@ -150,20 +150,32 @@ Struktur materi di slide ini belum dianggap lengkap, dan masih akan diatur ulang
 \begin{frame}{Sumber Primer \TeX\ , \LaTeX\ dan sekawannya}
 \begin{block}{Referensi}
 \begin{itemize}
-\item \TeX\ \textbf{IS the source}: \href{https://tug.org/}{tug.org}
-\item \LaTeX\ adalah salah satu varian turunan dari \TeX
-\item TeXLive, MikTeX, \ldots adalah contoh nama-nama untuk kategori distribusi \LaTeX
-\item TeXstudio, TeXniccenter, \ldots adalah contoh nama-nama editor \LaTeX
+\item \TeX\ \textbf{\underline{IS} the source}. See \href{https://tug.org/}{tug.org}
+\item \LaTeX\ adalah salah satu \textbf{varian \underline{turunan}} dari \TeX
+\item TeXLive, MikTeX, \ldots adalah contoh nama-nama untuk \textbf{\underline{distribusi}} \TeX~dan~\LaTeX
+\item TeXstudio, TeXniccenter, \ldots adalah contoh nama-nama \textbf{\underline{editor}} \LaTeX
 \item Saran saya? Mulailah install \textbf{TeXLive}$+$\textbf{TeXstudio}
-\item Bisakah menulis format LaTeX tanpa install? \textbf{Bisa}. Cobalah \href{https://www.overleaf.com}{overleaf.com}
-\item Bisakah konversi dari format lain? \textbf{Bisa}. Setelahnya disunting lagi.
+\item Bisakah menulis dalam format LaTeX tanpa install TeXLive dsb.? \textbf{Bisa}. Gunakan saja fasilitas di laman  \href{https://www.overleaf.com}{overleaf.com}
+\item Bisakah konversi dari format lain? \textbf{Bisa}. Setelah konversi, file \LaTeX~disunting seperlunya.
 \begin{itemize}
-    \item Jupyter Notebook: \textit{via} \textbf{jupyter nbconvert} di \underline{Anaconda Prompt}
+    \item Jupyter Notebook: \textit{via} \textbf{jupyter nbconvert} di \underline{\itshape python environment} seperti Anaconda Prompt
     \item MS Word (DOCX): \textit{via} \textbf{pandoc}
 \end{itemize}
-\item \textit{Need help}, \textit{ngoprek}, \textit{custom}: \href{https://tug.org/}{tug.org}, \href{https://www.overleaf.com}{overleaf.com}, TeXstudio LaTeX Reference/User Manual, \href{https://tex.stackexchange.com/}{tex.stackexchange.com}, etc.
+\item \textit{Need help}, mau \textit{ngoprek}, \textit{custom}: \href{https://tug.org/}{tug.org}, \href{https://www.overleaf.com}{overleaf.com}, TeXstudio LaTeX Reference/User Manual, \href{https://tex.stackexchange.com/}{tex.stackexchange.com}, etc.
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}[plain]
+\incgraph[documentpaper][width=\paperwidth,height=0.97\paperheight]{tugorg.png}
+\end{frame}
+
+\begin{frame}[plain]
+\incgraph[documentpaper][width=\paperwidth,height=0.97\paperheight]{overleaf.png}
+\end{frame}
+
+\begin{frame}[plain]
+\incgraph[documentpaper][width=\paperwidth,height=0.97\paperheight]{texstackexchange.png}
 \end{frame}
 
 \section{Struktur pada Kelas Dokumen}
@@ -211,7 +223,7 @@ Struktur materi di slide ini belum dianggap lengkap, dan masih akan diatur ulang
 \item \textit{Sunting sesuai dengan standard} dokumen \LaTeX\ dan TA/Tesis, termasuk bibliografi.
 \item \textbf{Konversi ke PDF} \textit{via} \texttt{pdflatex} dan \texttt{bibtex}, yaitu:
       \texttt{pdflatex} $ \rightarrow $ \texttt{bibtex} $ \rightarrow $ \texttt{pdflatex}
-\item \textbf{Ekstrak isi dokumen} \LaTeX\ \textbf{hanya pada bagian-bagian penting} dan menjadi \textit{etalase} TA/Tesis, serta \textit{\bfseries downgrade} \textbf{hirarkinya mengikuti standard }\texttt{beamer} (lihat halaman~\pageref{hirarki})
+\item Untuk slide presentasi, \textbf{ekstrak isi dokumen} \LaTeX\ \textbf{hanya pada bagian-bagian penting} dan menjadi \textit{etalase} TA/Tesis, serta \textit{\bfseries downgrade} \textbf{hirarkinya mengikuti standard }\texttt{beamer} (lihat halaman~\pageref{hirarki})
 \end{enumerate}
 \end{block}
 \end{frame}
@@ -234,13 +246,11 @@ Struktur materi di slide ini belum dianggap lengkap, dan masih akan diatur ulang
 \end{block}
 
 \begin{block}{Peruntukkannya}
-\bigskip
-
-``$ \backslash $'' untuk \textit{conserved word} (misal perintah, parameter) di \TeX\ atau \LaTeX. Sebagian perintah \TeX/\LaTeX\ khusus hanya untuk \textbf{MODA TEKS} atau \textbf{MODA MATEMATIKA}.
+``$ \backslash $'' untuk \textit{conserved words} (misal perintah, parameter) di \TeX\ atau \LaTeX. Sebagian perintah \TeX/\LaTeX\ hanya untuk \textbf{\underline{MODA TEKS}} atau hanya untuk \textbf{\underline{MODA MATEMATIKA}}.
 
 \bigskip
 
-``\%'' untuk mencegah agar apapun \textbf{di sebelah kanannya tidak dieksekusi} \TeX\ atau \LaTeX.
+``\%'' di suatu baris berguna untuk mencegah agar apapun \textbf{di sebelah kanan tanda \% tidak dieksekusi} \TeX\ atau \LaTeX.
 
 \bigskip
 
@@ -249,8 +259,6 @@ Struktur materi di slide ini belum dianggap lengkap, dan masih akan diatur ulang
 \bigskip
 
 ``['' dan ``]'' untuk penanda blok \textbf{argumen opsional}
-
-\bigskip
 \end{block}
 
 \end{frame}
@@ -317,6 +325,11 @@ Sebaris persamaan tak bernomor (terpisah dari paragraf):
                       \[ \alpha + \beta = 1 \]
 \end{verbatim}
 \end{block}
+
+\bigskip
+
+Dapat dikatakan bahwa menuliskan $\int x dx$ dan $\alpha + \beta = 1$ \textbf{hampir setara dengan membacanya}, kecuali bahwa ada tambahan tanda-tanda baca sebagai penambahnya. Secara umum, demikian pula sebagian (cukup) besar perintah di \LaTeX~bersifat serupa.
+
 \newpage
 Sebaris persamaan bernomor (terpisah dari paragraf):
 
@@ -333,6 +346,12 @@ Sebaris persamaan bernomor (terpisah dari paragraf):
 \end{equation}
 \end{verbatim}
 \end{block}
+
+\bigskip
+
+Penambahan ``\verb|\label{sqrtpi}|'' berguna untuk \textbf{rujukan silang} (\textit{cross reference}).
+
+
 \newpage
 Barisan persamaan (bernomor dan tak bernomor, terpisah dari paragraf):
 
@@ -450,7 +469,7 @@ Daftar bernomor urut (\textit{enumerated list}):
 \includegraphics[height=.65\textheight]{plotwithMath.pdf}
 %\includegraphics<3>[height=.7\textheight]{whiteLandscape.jpg}
 \end{center}
-\caption{Gambar vektor (format EPS atau PDF).}
+\caption{Gambar vektor (misal dalam format Postscript [PS atau EPS] atau PDF).}
 \end{figure}
 
 \begin{block}{}
@@ -459,7 +478,8 @@ Daftar bernomor urut (\textit{enumerated list}):
 \begin{center}
 \includegraphics[height=.65\textheight]{plotwithMath.pdf}
 \end{center}
-\caption{Gambar vektor (format EPS atau PDF).}
+\caption{Gambar vektor (misal dalam format Postscript [PS atau EPS]
+         atau PDF).}
 \end{figure}
 \end{verbatim}
 \end{block}
@@ -468,7 +488,7 @@ Daftar bernomor urut (\textit{enumerated list}):
 \begin{center}
 \includegraphics[height=.65\textheight]{whiteLandscape.jpg}
 \end{center}
-\caption{Gambar \textit{raster} (misal format JPG atau PNG).}
+\caption{Gambar \textit{raster} (misal dalam format JPG atau PNG).}
 \end{figure}
 
 \begin{block}{}
@@ -477,7 +497,7 @@ Daftar bernomor urut (\textit{enumerated list}):
 \begin{center}
 \includegraphics[height=.65\textheight]{whiteLandscape.jpg}
 \end{center}
-\caption{Gambar \textit{raster} (misal format JPG atau PNG).}
+\caption{Gambar \textit{raster} (misal dalam format JPG atau PNG).}
 \end{figure}
 \end{verbatim}
 \end{block}
@@ -565,11 +585,26 @@ halaman~\ref{math}. Lihat pula Daftar Isi (halaman~\ref{contents}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tabel}
 %=======================================================================
-\begin{frame}{Tabel}
+\begin{frame}[allowframebreaks]{Tabel}
+
+\begin{table}
+\label{tabExample0}
+\caption{Contoh tabel format baku: rapat kiri, tengah, \textit{merge columns}.}
+        \begin{tabular}{|c|l|}
+    \hline
+    \textbf{No} & \multicolumn{1}{c|}{\bfseries Nama} \\\hline\hline
+    1  & Aman \\\hline
+    2  & Mana \\\hline
+    3  & Anam \\\hline
+    \multicolumn{2}{|c|}{Tak ada lagi kombinasi}\\\hline
+\end{tabular}
+\end{table}
+
+\newpage
 
 \begin{table}
 \label{tabExample1}
-\caption{Tabel berwarna.}
+\caption{Contoh tabel berwarna. Paket \textsf{colortbl} harus ada dan dipanggil sebelum/di luar \textit{document environment}.}
 \begin{center}
 \begin{tabular}{cll}
 \rowcolor{Brown}\multicolumn{1}{c}{\textcolor{white}{No}} & \multicolumn{1}{c}{\textcolor{white}{Proxy function}} & \multicolumn{1}{c}{\textcolor{white}{Centroid}}\\
@@ -584,7 +619,7 @@ halaman~\ref{math}. Lihat pula Daftar Isi (halaman~\ref{contents}).
 
 \begin{table}
 \label{tabExample2}
-\caption{Tabel dengan lapisan samar.}
+\caption{Tabel dengan lapisan samar (hanya cocok untuk presentasi).}
 \begin{center}
 \begin{tabular}{l<{\onslide}!{\vrule}c<{\onslide<2->}c<{\onslide<3->}c<{\onslide<4->}c<{\onslide<5->}c}
 \rowcolor{Brown}Class & A & B & C & D \\
@@ -621,7 +656,7 @@ halaman~\ref{math}. Lihat pula Daftar Isi (halaman~\ref{contents}).
 %=======================================================================
 \begin{frame}[plain]
 \pause
-\shadowimage[width=.7\linewidth]{plotwithMath.pdf}{Plot of $ x^3 + 3 $ with Mathematica.}
+\shadowimage[width=.7\linewidth]{plotwithMath.pdf}{Plot of $ x^3 + 3 $ with Mathematica, with shadow.}
 \end{frame}
 %=======================================================================
 
@@ -766,6 +801,26 @@ int main(){
 }
 \end{verbatim}
 
+\newpage
+
+\textbf{\underline{Ditulis}:}
+
+\bigskip
+
+\verb|\begin{verbatim}|
+\begin{verbatim}
+#include <stdio.h>
+
+/* using verbatim environment */
+int main(){
+    puts("Hello world!");
+    return 0;
+}
+\end{verbatim}
+\verb|\end{verbatim}|
+
+\newpage
+
 \begin{lstlisting}[style=CStyle]
 #include <stdio.h>
 
@@ -775,6 +830,30 @@ int main(){
     return 0;
 }
 \end{lstlisting}
+
+\newpage
+
+Paket \textsf{listings} harus ada dan dipanggil sebelum/di luar \textit{document environment}.
+
+\textbf{\underline{Kode program ditulis}:}
+
+\bigskip
+
+\verb|\begin{lstlisting}[style=CStyle]|
+\begin{verbatim}
+#include <stdio.h>
+
+/* using listings package */
+int main(){
+    puts("Hello world!");
+    return 0;
+}
+\end{verbatim}
+\verb|\end{lstlisting}|
+
+\newpage
+
+\textsf{PyStyle} \& \textsf{FortranStyle} untuk kode Python dan Fortran.
 
 \begin{lstlisting}[style=PyStyle]
 # This is python code
@@ -802,6 +881,13 @@ end program hello
 %=======================================================================
 \begin{frame}{Video (Klik Gambar atau Tulisan)}
 \vfill
+
+Tingkat kerumitan untuk multimedia (misalnya video) lebih tinggi, namun sudah biasa difasilitasi untuk presentasi (beamer) atau bahkan paper untuk jurnal.
+
+Tautan di bawah ini hanya untuk menunjukkan saja, belum tentu bebas kesalahan.
+
+\bigskip
+
 \centering\movie[autostart,showcontrols,externalviewer]{\includegraphics[scale=0.2]{generalRelativity.png}}{visualizingGeneralRelativity.mp4}
 \vfill
 %options: autostart, loop, repeat, palindrome
